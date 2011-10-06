@@ -108,7 +108,7 @@
             })
             .attr( 'src', options.src );
 
-            return $.vegas;
+            return defaults.cur_bloc.vegas;
         },
         // Destroy background and/or overlay
         destroy: function( what ) {
@@ -122,7 +122,7 @@
                 $( '.vegas-overlay' ).remove();
             }
 
-            return $.vegas;
+            return defaults.cur_bloc.vegas;
         },
 
         // Display the pattern overlay
@@ -156,7 +156,7 @@
 
             $overlay.prependTo( 'body' );
 
-            return $.vegas;
+            return defaults.cur_bloc.vegas;
         },
 
         // Start/restart slideshow
@@ -181,7 +181,7 @@
                 }
 
                 if ( options.preload ) {
-                    $.vegas( 'preload', options.backgrounds );
+                   defaults.cur_bloc.vegas( 'preload', options.backgrounds );
                 }
             }
 
@@ -193,7 +193,7 @@
             clearInterval( timer );
 
             if ( !backgrounds.length ) {
-                return $.vegas;
+                return defaults.cur_bloc.vegas;
             }
 
             var doSlideshow = function() {
@@ -226,7 +226,7 @@
                 timer = setInterval( doSlideshow, options.delay );
             }
 
-            return $.vegas;
+            return defaults.cur_bloc.vegas;
         },
 
         // Jump to the next background in the current slideshow
@@ -234,12 +234,12 @@
             var from = step;
 
             if ( step ) {
-                $.vegas( 'slideshow', { step: step }, true );
+               defaults.cur_bloc.vegas( 'slideshow', { step: step }, true );
 
                 defaults.cur_bloc.trigger( 'vegasnext', [ $current.get(0), step - 1, from - 1 ] );
             }
 
-            return $.vegas;
+            return defaults.cur_bloc.vegas;
         },
 
         // Jump to the previous background in the current slideshow
@@ -247,12 +247,12 @@
             var from = step;
 
             if ( step ) {
-                $.vegas( 'slideshow', { step: step - 2 }, true );
+               defaults.cur_bloc.vegas( 'slideshow', { step: step - 2 }, true );
 
                 defaults.cur_bloc.trigger( 'vegasprevious', [ $current.get(0), step - 1, from - 1 ] );
             }
 
-            return $.vegas;
+            return defaults.cur_bloc.vegas;
         },
 
         // Jump to a specific background in the current slideshow
@@ -260,12 +260,12 @@
             var from = step;
 
             if ( step ) {
-                $.vegas( 'slideshow', { step: s }, true );
+               defaults.cur_bloc.vegas( 'slideshow', { step: s }, true );
 
                 defaults.cur_bloc.trigger( 'vegasjump', [ $current.get(0), step - 1, from - 1 ] );
             }
 
-            return $.vegas;
+            return defaults.cur_bloc.vegas;
         },
 
         // Stop slideshow
@@ -277,7 +277,7 @@
 
             defaults.cur_bloc.trigger( 'vegasstop', [ $current.get(0), from - 1 ] );
 
-            return $.vegas;
+            return defaults.cur_bloc.vegas;
         },
 
         // Pause slideShow
@@ -287,7 +287,7 @@
 
             defaults.cur_bloc.trigger( 'vegaspause', [ $current.get(0), step - 1 ] );
 
-            return $.vegas;
+            return defaults.cur_bloc.vegas;
         },
 
         // Get some useful values or objects
@@ -317,7 +317,7 @@
                 }
             }
 
-            return $.vegas;
+            return defaults.cur_bloc.vegas;
         }
     }
 
