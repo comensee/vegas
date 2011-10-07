@@ -13,11 +13,19 @@
             margin-left:100px;
             border: 1px solid red;
 }
+        #second{
+            height:200px;
+            width:350px;
+            margin-left:100px;
+            margin-top:5px;
+            border: 1px solid red;
+}
     </style>
     
   </head>
   <body>
       <div id="main">
+          Hello world !
       </div>
 <script type="text/javascript">
         $('#main').vegas('slideshow', {
@@ -26,15 +34,12 @@
             { src:'images/background2.jpg', fade:1000 },
             { src:'images/background3.jpg', fade:1000 }
           ]
-       });
-
-
-        $('#main').vegas({
-            'src':'images/background1.jpg'
-        })
-        $('#main').vegas('overlay',{
+       }).vegas('overlay',{
           src:'overlays/11.png'
         });
+
+
+       
     </script>
   </body>
 </html>

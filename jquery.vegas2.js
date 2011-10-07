@@ -108,7 +108,7 @@
             })
             .attr( 'src', options.src );
 
-            return defaults.cur_bloc.vegas;
+            return defaults.cur_bloc;
         },
         // Destroy background and/or overlay
         destroy: function( what ) {
@@ -122,7 +122,7 @@
                 $( '.vegas-overlay' ).remove();
             }
 
-            return defaults.cur_bloc.vegas;
+            return defaults.cur_bloc;
         },
 
         // Display the pattern overlay
@@ -156,7 +156,7 @@
 
             $overlay.prependTo( 'body' );
 
-            return defaults.cur_bloc.vegas;
+            return defaults.cur_bloc;
         },
 
         // Start/restart slideshow
@@ -193,7 +193,7 @@
             clearInterval( timer );
 
             if ( !backgrounds.length ) {
-                return defaults.cur_bloc.vegas;
+                return defaults.cur_bloc;
             }
 
             var doSlideshow = function() {
@@ -226,7 +226,7 @@
                 timer = setInterval( doSlideshow, options.delay );
             }
 
-            return defaults.cur_bloc.vegas;
+            return defaults.cur_bloc;
         },
 
         // Jump to the next background in the current slideshow
@@ -239,7 +239,7 @@
                 defaults.cur_bloc.trigger( 'vegasnext', [ $current.get(0), step - 1, from - 1 ] );
             }
 
-            return defaults.cur_bloc.vegas;
+            return defaults.cur_bloc;
         },
 
         // Jump to the previous background in the current slideshow
@@ -252,7 +252,7 @@
                 defaults.cur_bloc.trigger( 'vegasprevious', [ $current.get(0), step - 1, from - 1 ] );
             }
 
-            return defaults.cur_bloc.vegas;
+            return defaults.cur_bloc;
         },
 
         // Jump to a specific background in the current slideshow
@@ -265,7 +265,7 @@
                 defaults.cur_bloc.trigger( 'vegasjump', [ $current.get(0), step - 1, from - 1 ] );
             }
 
-            return defaults.cur_bloc.vegas;
+            return defaults.cur_bloc;
         },
 
         // Stop slideshow
@@ -277,7 +277,7 @@
 
             defaults.cur_bloc.trigger( 'vegasstop', [ $current.get(0), from - 1 ] );
 
-            return defaults.cur_bloc.vegas;
+            return defaults.cur_bloc;
         },
 
         // Pause slideShow
@@ -287,7 +287,7 @@
 
             defaults.cur_bloc.trigger( 'vegaspause', [ $current.get(0), step - 1 ] );
 
-            return defaults.cur_bloc.vegas;
+            return defaults.cur_bloc;
         },
 
         // Get some useful values or objects
@@ -317,7 +317,7 @@
                 }
             }
 
-            return defaults.cur_bloc.vegas;
+            return defaults.cur_bloc;
         }
     }
 
